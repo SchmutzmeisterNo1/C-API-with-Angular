@@ -1,13 +1,3 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-.home-icon {
-  text-align: center;
-  justify-content: center;
-  margin: 10px;
-}
-
 .fullname {
   margin: 10px;
   color: rgb(221, 55, 13);
@@ -22,4 +12,9 @@
 .logo {
   height: 65px;
   width: 190px;
+  display: flex;
+  padding: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }

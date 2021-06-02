@@ -25,6 +25,6 @@ export class UserApiService {
   }
 
   deleteUserDetail(id: number): any{
-    return this.http.delete(`${this.baseURL}/${id}`);
+    return this.http.delete(this.baseURL + '/' + id);
   }
 }

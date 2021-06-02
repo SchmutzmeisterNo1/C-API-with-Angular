@@ -16,6 +16,7 @@ import {MatPaginatorModule } from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './shared/components/edit-dialog/edit-dialog.component';
+import { OpenUserDialogComponent } from './shared/components/open-user-dialog/open-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EditDialogComponent } from './shared/components/edit-dialog/edit-dialog
     FooterComponent,
     NavComponent,
     DeleteDialogComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    OpenUserDialogComponent
   ],
   imports: [
     BrowserModule,

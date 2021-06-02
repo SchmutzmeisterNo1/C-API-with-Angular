@@ -6,6 +6,7 @@ import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/d
 import { NumberValueAccessor } from '@angular/forms';
 import { UserDetail } from 'src/app/shared/models/UserDetails';
 import { EditDialogComponent } from 'src/app/shared/components/edit-dialog/edit-dialog.component';
+import { OpenUserDialogComponent } from 'src/app/shared/components/open-user-dialog/open-user-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { EditDialogComponent } from 'src/app/shared/components/edit-dialog/edit-
 })
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  constructor(public userService: UserApiService, public dialog: MatDialog) { }
+  constructor(public userService: UserApiService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.userService.refreshList();
@@ -26,5 +28,18 @@ export class HomeComponent implements OnInit {
 
   openEditDialog(mode: UserDetail): void {
     const dialogRef = this.dialog.open(EditDialogComponent);
+  }
+
+  openAddUserDetailDialog(model: UserDetail): void {
+    this.dialog.open(OpenUserDialogComponent);
+  }
+
+  onDelete(id: number): any{
+    if (confirm('Are your sure to delete?')){
+      this.userService.deleteUserDetail(id)
+        .subscribe(res => {
+          this.userService.refreshList();
+        });
+    }
   }
 }
