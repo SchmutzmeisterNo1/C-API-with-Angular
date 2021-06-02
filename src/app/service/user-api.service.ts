@@ -10,7 +10,9 @@ import { ArgumentOutOfRangeError } from 'rxjs';
 export class UserApiService {
 
   constructor(private http: HttpClient) { }
-
+  // Parse specific items to modal
+  specificModalUserDetail?: UserDetail;
+  //
   readonly baseURL = `http://localhost:61236/api/UserDetails`;
   formData: UserDetail = new UserDetail();
   list: UserDetail[] = [];
@@ -26,5 +28,13 @@ export class UserApiService {
 
   deleteUserDetail(id: number): any{
     return this.http.delete(this.baseURL + '/' + id);
+  }
+
+  postUserDetail(model: UserDetail): any{
+    return this.http.post(this.baseURL, model);
+  }
+
+  updateUserDetail(id: number, model: UserDetail): any {
+    return this.http.put(this.baseURL + '/' + id, model);
   }
 }

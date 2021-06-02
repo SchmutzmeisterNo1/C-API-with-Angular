@@ -28,8 +28,8 @@
         <mat-icon>delete_outline</mat-icon>
       </button>
       <span class="button-margin"></span>
-      <button mat-mini-fab color="accent" aria-label="Example icon button with a bookmark icon">
-        <mat-icon>bookmark</mat-icon>
+      <button mat-mini-fab color="accent" (click)="openEditUserDialog(element)" aria-label="Example icon button with a bookmark icon">
+        <mat-icon>edit</mat-icon>
       </button>
     </td>
   </ng-container>
@@ -37,6 +37,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<button class="addButton">
+<button mat-mini-fab color="primary" (click)="openAddUserDetailDialog()" aria-label="Example icon button with a delete icon">
   <mat-icon>add</mat-icon>
 </button>

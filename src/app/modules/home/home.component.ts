@@ -5,8 +5,8 @@ import {MatDialog} from '@angular/material/dialog';
 import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 import { NumberValueAccessor } from '@angular/forms';
 import { UserDetail } from 'src/app/shared/models/UserDetails';
-import { EditDialogComponent } from 'src/app/shared/components/edit-dialog/edit-dialog.component';
 import { OpenUserDialogComponent } from 'src/app/shared/components/open-user-dialog/open-user-dialog.component';
+import { EditUserDialogComponent } from 'src/app/shared/edit-user-dialog/edit-user-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,7 @@ import { OpenUserDialogComponent } from 'src/app/shared/components/open-user-dia
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  modalRel?: UserDetail;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   constructor(public userService: UserApiService,
               public dialog: MatDialog) { }
@@ -26,12 +27,14 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteDialogComponent);
   }
 
-  openEditDialog(mode: UserDetail): void {
-    const dialogRef = this.dialog.open(EditDialogComponent);
+  openAddUserDetailDialog(): void {
+    const dialogRef = this.dialog.open(OpenUserDialogComponent);
   }
 
-  openAddUserDetailDialog(model: UserDetail): void {
-    this.dialog.open(OpenUserDialogComponent);
+  openEditUserDialog(model: UserDetail): void {
+    const activaeModal = this.dialog.open(EditUserDialogComponent, {
+      data: model
+    });
   }
 
   onDelete(id: number): any{

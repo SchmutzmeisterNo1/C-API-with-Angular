@@ -15,8 +15,14 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule } from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
-import { EditDialogComponent } from './shared/components/edit-dialog/edit-dialog.component';
 import { OpenUserDialogComponent } from './shared/components/open-user-dialog/open-user-dialog.component';
+import { MatCardModule} from '@angular/material/card';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { EditUserDialogComponent } from './shared/edit-user-dialog/edit-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +32,8 @@ import { OpenUserDialogComponent } from './shared/components/open-user-dialog/op
     FooterComponent,
     NavComponent,
     DeleteDialogComponent,
-    EditDialogComponent,
-    OpenUserDialogComponent
+    OpenUserDialogComponent,
+    EditUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,13 @@ import { OpenUserDialogComponent } from './shared/components/open-user-dialog/op
     MatBadgeModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
