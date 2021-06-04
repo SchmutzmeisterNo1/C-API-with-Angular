@@ -25,11 +25,11 @@
   <ng-container matColumnDef="symbol">
     <th mat-header-cell *matHeaderCellDef> Aktionen </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-mini-fab color="primary" (click)="onDelete(element.userId)"aria-label="Example icon button with a delete icon">
+      <button mat-icon-button (click)="onDelete(element.userId)"aria-label="Example icon button with a delete icon">
         <mat-icon>delete_outline</mat-icon>
       </button>
       <span class="button-margin"></span>
-      <button mat-mini-fab color="accent" (click)="openEditUserDialog(element)" aria-label="Example icon button with a bookmark icon">
+      <button mat-icon-button (click)="openEditUserDialog(element)" aria-label="Example icon button with a bookmark icon">
         <mat-icon>edit</mat-icon>
       </button>
     </td>
@@ -38,7 +38,10 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<button mat-mini-fab color="primary" (click)="openAddUserDetailDialog()" aria-label="Example icon button with a delete icon">
-  <mat-icon>add</mat-icon>
-</button>
 </div>
+<div class="center">
+  <button class="add__button" mat-mini-fab color="black" (click)="openAddUserDetailDialog()" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+

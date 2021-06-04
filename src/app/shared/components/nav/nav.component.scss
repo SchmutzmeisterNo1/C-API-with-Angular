@@ -135,6 +135,11 @@
       }
     }
 
+    .user__image {
+      height: 50px;
+      width: 50px;
+    }
+
     div:not(:first-of-type) {
       padding: 10px;
       border-radius: 50%;
