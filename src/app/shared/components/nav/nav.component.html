@@ -1,7 +1,71 @@
-<mat-toolbar>
-  <mat-icon>menu</mat-icon>
-  <mat-icon class="home-icon" matBadge="15" matBadgeColor="warn">home</mat-icon>
-  <img class="logo" src="../../../../assets/Lilium_Logo.png">
-  <h2 class="fullname">Maximilian Pietsch</h2>
-  <mat-icon>cancel icon</mat-icon>
-</mat-toolbar>
+<div class="home-container">
+<div class="home__header">
+  <div class="home__header__left">
+    <img class="company__img" mat-card-avatar src="../../../../assets/88781-200.png"/>
+    <div class="input">
+      <mat-icon class="search-icon">search_outline</mat-icon>
+      <form>
+        <input placeholder="Suche nach Details" type="text">
+      </form>
+    </div>
+
+  </div>
+  <div class="home__header__middle">
+    <div routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon>home</mat-icon>
+    </div>
+    <div routerLink="/table" routerLinkActive="active">
+      <mat-icon>ondemand_video</mat-icon>
+    </div>
+    <div>
+      <mat-icon>store</mat-icon>
+    </div>
+    <div>
+      <mat-icon>group</mat-icon>
+    </div>
+    <div>
+      <mat-icon>flag</mat-icon>
+    </div>
+
+  </div>
+  <div class="home__header__right">
+    <div>
+      <img
+        alt=""
+        mat-card-avatar
+        [src]="">
+      <span class="name">{{'Maximilian'}}</span>
+    </div>
+    <div>
+      <mat-icon>add</mat-icon>
+    </div>
+
+    <div>
+      <mat-icon matBadge="4"
+                matBadgeColor="primary"
+                matBadgeOverlap="false"
+                matBadgePosition="above after"> forum
+      </mat-icon>
+    </div>
+
+    <div>
+      <mat-icon matBadge="3"
+                matBadgeColor="warn"
+                matBadgeOverlap="false">notifications
+      </mat-icon>
+    </div>
+
+
+    <div>
+
+      <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon> Logout
+        </button>
+      </mat-menu>
+    </div>
+
+  </div>
+</div>
+</div>
