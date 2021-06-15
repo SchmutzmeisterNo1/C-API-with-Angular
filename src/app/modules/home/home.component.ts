@@ -23,10 +23,6 @@ export class HomeComponent implements OnInit {
     this.userService.refreshList();
   }
 
-  openDeleteDialog(id: number): void{
-    const dialogRef = this.dialog.open(DeleteDialogComponent);
-  }
-
   openAddUserDetailDialog(): void {
     const dialogRef = this.dialog.open(OpenUserDialogComponent);
   }

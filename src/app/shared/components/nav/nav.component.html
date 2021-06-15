@@ -10,6 +10,9 @@
     </div>
 
   </div>
+  <div class="hamburger__icon">
+    <mat-icon>arrow_drop_down</mat-icon>
+  </div>
   <div class="home__header__middle">
     <div routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       <mat-icon>home</mat-icon>
@@ -61,11 +64,64 @@
       <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
+          <mat-icon>assignment_ind</mat-icon> Profil
+        </button>
+        <button mat-menu-item>
           <mat-icon>exit_to_app</mat-icon> Logout
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon> Einstellungen
         </button>
       </mat-menu>
     </div>
 
   </div>
+</div>
+<div class="home__header__right__afterpx">
+  <div>
+    <mat-icon [matMenuTriggerFor]="menu1">menu</mat-icon>
+    <mat-menu #menu1="matMenu">
+      <button mat-menu-item>
+        <mat-icon>ondemand_video</mat-icon> Test1
+      </button>
+      <button mat-menu-item>
+        <mat-icon>store</mat-icon> Test2
+      </button>
+      <button mat-menu-item>
+        <mat-icon>group</mat-icon> Test3
+      </button>
+    </mat-menu>
+  </div>
+
+  <div>
+    <mat-icon>add</mat-icon>
+  </div>
+
+  <div>
+    <mat-icon matBadge="4"
+              matBadgeColor="primary"
+              matBadgeOverlap="false"
+              matBadgePosition="above after"> forum
+    </mat-icon>
+  </div>
+
+  <div>
+    <mat-icon matBadge="3"
+              matBadgeColor="warn"
+              matBadgeOverlap="false">notifications
+    </mat-icon>
+  </div>
+
+
+  <div>
+
+    <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon> Logout
+      </button>
+    </mat-menu>
+  </div>
+
 </div>
 </div>

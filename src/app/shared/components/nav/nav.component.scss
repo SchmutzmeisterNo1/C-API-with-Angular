@@ -58,6 +58,9 @@
   }
 
   // Left Ends Here
+  .hamburger__icon {
+    display: none;
+  }
 
   &__middle {
     padding: 10px;
@@ -107,7 +110,6 @@
   }
 
   // Middle Ends Here
-
   &__right {
     flex: 0.5;
     height: 100%;
@@ -145,6 +147,53 @@
       border-radius: 50%;
       background-color: #E4E6EB;
     }
-
+    &__afterpx{
+      display: none;
+    }
   }
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .home__header__middle {
+      display: none;
+    }
+
+    .home__header__left {
+      display: none;
+    }
+
+    .home__header__right {
+      display: none;
+    }
+
+    .home__header__right__afterpx {
+      display: flex;
+      flex: .5;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      gap: 10px;
+
+    > * {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+
+    div:not(:first-of-type) {
+      padding: 10px;
+      border-radius: 50%;
+      background-color: #E4E6EB;
+    }
+    }
 }

@@ -13,7 +13,7 @@ export class UserApiService {
   // Parse specific items to modal
   specificModalUserDetail?: UserDetail;
   //
-  readonly baseURL = `http://localhost:61236/api/UserDetails`;
+  readonly baseURL = `http://localhost:5000/api/UserDetails`;
   formData: UserDetail = new UserDetail();
   list: UserDetail[] = [];
 

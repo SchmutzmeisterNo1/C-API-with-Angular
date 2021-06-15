@@ -1,0 +1,30 @@
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #1877F2 !important;;
+ }
+
+ ::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #1877F2 !important;
+ }
+
+.user__firstName {
+  flex: .5;
+}
+
+.user__lastName {
+  flex: 0.5;
+}
+
+.add__form {
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.add__button {
+  justify-content: center;
+  text-align: center;
+  margin:0 auto;
+  display: flex;
+}

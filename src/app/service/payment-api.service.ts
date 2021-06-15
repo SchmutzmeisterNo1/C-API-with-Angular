@@ -2,7 +2,7 @@ import { getLocaleTimeFormat } from '@angular/common';
 import { HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Injectable } from '@angular/core';
-import {PaymentDetail} from '../shared/components/models/PaymentDetail';
+import { PaymentDetail } from '../shared/models/PaymentDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class PaymentAPIService {
 
   constructor(private http: HttpClient) { }
 
-  readonly baseURL = `http://localhost:61236/api/PaymentDetail`;
+  readonly baseURL = `http://localhost:5000/api/PaymentDetail`;
   formData: PaymentDetail = new PaymentDetail();
   list: PaymentDetail[] = [];
 
