@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { UserApiService } from 'src/app/service/user-api.service';
 import {MatDialog} from '@angular/material/dialog';
@@ -7,6 +7,7 @@ import { NumberValueAccessor } from '@angular/forms';
 import { UserDetail } from 'src/app/shared/models/UserDetails';
 import { OpenUserDialogComponent } from 'src/app/shared/components/open-user-dialog/open-user-dialog.component';
 import { EditUserDialogComponent } from 'src/app/shared/edit-user-dialog/edit-user-dialog.component';
+import {MatSortModule} from '@angular/material/sort';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +15,10 @@ import { EditUserDialogComponent } from 'src/app/shared/edit-user-dialog/edit-us
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @Input() filter!: string;
   modalRel?: UserDetail;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource!: MatTableDataSource<UserDetail>;
   constructor(public userService: UserApiService,
               public dialog: MatDialog) { }
 
@@ -40,5 +43,11 @@ export class HomeComponent implements OnInit {
           this.userService.refreshList();
         });
     }
+  }
+
+  applyFilter(filterValue: string): void {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLocaleLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

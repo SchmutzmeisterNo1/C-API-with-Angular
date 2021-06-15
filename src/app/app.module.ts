@@ -24,6 +24,8 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { EditUserDialogComponent } from './shared/edit-user-dialog/edit-user-dialog.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSortModule} from '@angular/material/sort';
+import { ChatbotComponent } from './modules/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {MatMenuModule} from '@angular/material/menu';
     NavComponent,
     DeleteDialogComponent,
     OpenUserDialogComponent,
-    EditUserDialogComponent
+    EditUserDialogComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     FormsModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

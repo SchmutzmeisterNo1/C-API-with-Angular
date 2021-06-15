@@ -42,13 +42,26 @@ table {
   background-color: rgb(253, 251, 251);
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1050px){
+  .home__body {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 750px) {
   .home__body {
     margin-top: 0px;
   }
 
-  table {
-    width: 100%;
+ .mat-table .mat-header-cell {
+    //Hiermit ist der Headweg
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
   }
 
   .mat-table .mat-cell {
@@ -56,21 +69,21 @@ table {
     display: block;
     font-size: 1em;
     text-align: right;
-    font-weight: bold;
     height:30px;
-    margin-bottom: 4%;
+    margin-bottom: 20px;
   }
 
   .mat-table .mat-cell:before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
     font-weight: normal;
+  }
 
-    font-size: .85em;
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+    .mat-table .mat-cell:first-child {
+    margin-top: 4%;
   }
 }
