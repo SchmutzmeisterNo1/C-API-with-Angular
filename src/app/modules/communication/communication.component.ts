@@ -13,8 +13,7 @@ export class CommunicationComponent implements OnInit {
   constructor(public communicationService: CommunicationService,
               private dialog: MatDialog) { }
   ngOnInit(): void {
-    this.getList();
-    console.log(this.getList());
+    this.communicationService.refreshList();
   }
 
   openAddDialog(): any {

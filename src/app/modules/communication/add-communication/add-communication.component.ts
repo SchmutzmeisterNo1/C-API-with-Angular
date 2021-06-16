@@ -26,5 +26,6 @@ export class AddCommunicationComponent implements OnInit {
   save(model: Post): any {
     this.communicationService.setPost(model);
     this.dialog.closeAll();
+    this.communicationService.refreshList();
   }
 }

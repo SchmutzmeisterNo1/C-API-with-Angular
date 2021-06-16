@@ -10,7 +10,7 @@ import { ChildComment } from '../shared/models/ChildComment';
 export class CommunicationService {
 
   constructor(private http: HttpClient) { }
-
+  list: Post[] = [];
   readonly baseURLPost = `http://localhost:5000/api/Post`;
   readonly baseURLParentComment = `http://localhost:5000/api/ParentComment`;
   readonly baseURLChildComment = `http://localhost:5000/api/ChildComment`;
@@ -73,5 +73,12 @@ export class CommunicationService {
 
   deleteChildComment(id: number): any {
     return this.http.delete(this.baseURLChildComment + '/' + id);
+  }
+
+  refreshList(): void {
+    this.http.get(this.baseURLPost)
+    .subscribe(data => {
+      this.list = data as Post[];
+    });
   }
 }

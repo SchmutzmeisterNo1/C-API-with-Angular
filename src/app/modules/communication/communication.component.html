@@ -3,5 +3,9 @@
     <button class="add__button" mat-mini-fab color="black" (click)="openAddDialog()" aria-label="Example icon button with a delete icon">
       <mat-icon>add</mat-icon>
     </button>
+    <div *ngFor="let item of communicationService.list">
+      <p>{{item.postId}}</p>
+      <p>{{item.value}}</p>
+    </div>
   </div>
 </div>
