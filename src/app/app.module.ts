@@ -26,6 +26,8 @@ import { EditUserDialogComponent } from './shared/edit-user-dialog/edit-user-dia
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSortModule} from '@angular/material/sort';
 import { ChatbotComponent } from './modules/chatbot/chatbot.component';
+import { CommunicationComponent } from './modules/communication/communication.component';
+import { AddCommunicationComponent } from './modules/communication/add-communication/add-communication.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ChatbotComponent } from './modules/chatbot/chatbot.component';
     DeleteDialogComponent,
     OpenUserDialogComponent,
     EditUserDialogComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    CommunicationComponent,
+    AddCommunicationComponent
   ],
   imports: [
     BrowserModule,
