@@ -1,0 +1,20 @@
+<div class="home__body">
+<div class="home__form">
+<form>
+  <div class="header">Login your Account</div>
+  <mat-form-field>
+    <input matInput [(ngModel)]="emailInput" [ngModelOptions]="{standalone: true}" placeholder="Email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="passwordInput" [ngModelOptions]="{standalone: true}" placeholder="Password" required>
+  </mat-form-field>
+  <div class="actions">
+    <button mat-flat-button color="primary" type="submit" (click)="post()">Login</button>
+    <div class="seperator">
+      <span>OR</span>
+    </div>
+    <button mat-stroked-button type="button" routerLink="/register">Register</button>
+  </div>
+</form>
+</div>
+</div>

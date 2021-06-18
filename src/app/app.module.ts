@@ -28,6 +28,9 @@ import {MatSortModule} from '@angular/material/sort';
 import { ChatbotComponent } from './modules/chatbot/chatbot.component';
 import { CommunicationComponent } from './modules/communication/communication.component';
 import { AddCommunicationComponent } from './modules/communication/add-communication/add-communication.component';
+import { LoginComponent } from './modules/login/login.component';
+import { RegisterComponent } from './modules/register/register.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { AddCommunicationComponent } from './modules/communication/add-communica
     EditUserDialogComponent,
     ChatbotComponent,
     CommunicationComponent,
-    AddCommunicationComponent
+    AddCommunicationComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ import { AddCommunicationComponent } from './modules/communication/add-communica
     FormsModule,
     MatInputModule,
     MatMenuModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

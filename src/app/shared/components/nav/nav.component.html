@@ -32,12 +32,12 @@
 
   </div>
   <div class="home__header__right">
-    <div>
+    <div *ngIf(loggedIn)>
       <img class="user__image"
         alt=""
         mat-card-avatar
         src="../../../../assets/8b167af653c2399dd93b952a48740620.jpg">
-      <span class="name">{{'Maximilian'}}</span>
+      <span class="name">{{model.firstName}}</span>
     </div>
     <div>
       <mat-icon>add</mat-icon>
@@ -66,8 +66,8 @@
         <button mat-menu-item>
           <mat-icon>assignment_ind</mat-icon> Profil
         </button>
-        <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon> Logout
+        <button mat-menu-item routerLink="/login" routerLinkActive="true">
+          <mat-icon>exit_to_app</mat-icon> Login/Register
         </button>
         <button mat-menu-item>
           <mat-icon>settings</mat-icon> Einstellungen

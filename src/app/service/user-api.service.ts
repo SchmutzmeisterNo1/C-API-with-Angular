@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { UserDetail } from '../shared/models/UserDetails';
 import { ThrowStmt } from '@angular/compiler';
 import { ArgumentOutOfRangeError } from 'rxjs';
+import { AuthenticateRequest } from '../shared/models/AuthenticateRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class UserApiService {
         this.list = x as UserDetail[];
         console.log(this.list);
       });
+  }
+
+  getUserDetailById(id: number): any {
+    return this.http.get(this.baseURL + '/' + id).toPromise();
   }
 
   deleteUserDetail(id: number): any{
