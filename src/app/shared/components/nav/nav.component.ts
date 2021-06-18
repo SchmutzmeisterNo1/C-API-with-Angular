@@ -13,21 +13,7 @@ export class NavComponent implements OnInit {
   constructor(public authService: AuthService, public userService: UserApiService) { }
 
   ngOnInit(): void {
-    this.getUser();
-  }
-
-  getUser(): any {
-    const loggendIn = this.authService.loggedIn;
-    if (loggendIn){
-      const idStr = localStorage.getItem('id');
-      const id = Number(idStr);
-      if (id !== null) {
-        const userDetails = this.userService.getUserDetailById(id);
-        this.model.firstName = userDetails.firstName;
-      }
-    }
-    else {
-
-    }
+    this.authService.getUser();
+    console.log(this.authService.model);
   }
 }

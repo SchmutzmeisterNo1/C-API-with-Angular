@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { UserDetail } from '../shared/models/UserDetails';
 import { ThrowStmt } from '@angular/compiler';
-import { ArgumentOutOfRangeError } from 'rxjs';
+import { ArgumentOutOfRangeError, Observable } from 'rxjs';
 import { AuthenticateRequest } from '../shared/models/AuthenticateRequest';
 
 @Injectable({
@@ -17,18 +17,18 @@ export class UserApiService {
   readonly baseURL = `http://localhost:5000/api/UserDetails`;
   formData: UserDetail = new UserDetail();
   list: UserDetail[] = [];
+  model!: UserDetail;
 
   refreshList(): void {
     this.http.get(this.baseURL)
       .toPromise()
       .then(x => {
         this.list = x as UserDetail[];
-        console.log(this.list);
       });
   }
 
   getUserDetailById(id: number): any {
-    return this.http.get(this.baseURL + '/' + id).toPromise();
+    return this.http.get(this.baseURL + '/' + id);
   }
 
   deleteUserDetail(id: number): any{

@@ -8,6 +8,7 @@ import { UserDetail } from 'src/app/shared/models/UserDetails';
 import { OpenUserDialogComponent } from 'src/app/shared/components/open-user-dialog/open-user-dialog.component';
 import { EditUserDialogComponent } from 'src/app/shared/edit-user-dialog/edit-user-dialog.component';
 import {MatSortModule} from '@angular/material/sort';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -20,10 +21,12 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource!: MatTableDataSource<UserDetail>;
   constructor(public userService: UserApiService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              public authService: AuthService) { }
 
   ngOnInit(): void {
     this.userService.refreshList();
+    console.log(this.authService.getUser());
   }
 
   openAddUserDetailDialog(): void {
