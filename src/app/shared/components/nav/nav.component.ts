@@ -9,11 +9,9 @@ import { UserDetail } from '../../models/UserDetails';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  model!: UserDetail;
-  constructor(public authService: AuthService, public userService: UserApiService) { }
+  constructor(public authService: AuthService, public userService: UserApiService) {
+  }
 
   ngOnInit(): void {
-    this.authService.getUser();
-    console.log(this.authService.model);
   }
 }

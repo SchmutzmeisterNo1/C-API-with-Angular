@@ -37,7 +37,7 @@
         alt=""
         mat-card-avatar
         src="../../../../assets/8b167af653c2399dd93b952a48740620.jpg">
-      <span class="name">{{"kekeke"}}</span>
+      <span class="name" *ngIf="authService.model != null">{{authService.model.firstName}}</span>
     </div>
     <div>
       <mat-icon>add</mat-icon>
@@ -66,10 +66,13 @@
         <button mat-menu-item>
           <mat-icon>assignment_ind</mat-icon> Profil
         </button>
-        <button mat-menu-item routerLink="/login" routerLinkActive="true">
-          <mat-icon>exit_to_app</mat-icon> Login/Register
-        </button>
-        <div (click)="authService.doLogout()">
+          <button mat-menu-item *ngIf="authService.isLoggedIn" routerLink="/login" routerLinkActive="true">
+            <mat-icon>exit_to_app</mat-icon> Einstellungen
+          </button>
+          <button mat-menu-item *ngIf="authService.isLoggedIn == false" routerLink="/login" routerLinkActive="true">
+            <mat-icon>exit_to_app</mat-icon> Register
+          </button>
+        <div (click)="authService.doLogout()" *ngIf="authService.isLoggedIn">
         <button mat-menu-item>
           <mat-icon>settings</mat-icon> Ausloggen
         </button>

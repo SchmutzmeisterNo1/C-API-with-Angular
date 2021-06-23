@@ -31,6 +31,8 @@ import { AddCommunicationComponent } from './modules/communication/add-communica
 import { LoginComponent } from './modules/login/login.component';
 import { RegisterComponent } from './modules/register/register.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSlider, MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatMenuModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

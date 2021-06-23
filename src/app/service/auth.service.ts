@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
+import { first, tap } from 'rxjs/operators';
 import { AuthenticateRequest } from '../shared/models/AuthenticateRequest';
 import { UserDetail } from '../shared/models/UserDetails';
 import { UserApiService } from './user-api.service';
@@ -10,7 +10,7 @@ import { UserApiService } from './user-api.service';
   providedIn: 'root'
 })
 export class AuthService {
-  model!: UserDetail;
+  public model?: UserDetail;
   constructor(private http: HttpClient, private router: Router, private userService: UserApiService) {
    }
 
@@ -25,20 +25,20 @@ export class AuthService {
     })).toPromise();
   }
 
-  getUser(): any {
+  getUser(): void {
     if (this.isLoggedIn){
       const idStr = localStorage.getItem('id');
       const id = Number(idStr);
+      console.log(id);
       if (id !== null) {
-        const userDetails = this.userService.getUserDetailById(id).then((data) => {
-          data.subscribe(arg => this.model = arg);
-        });
-        console.log(userDetails);
-        return userDetails;
+        const test = this.userService.getUserDetailById(id).toPromise()
+          .then(r => {
+            this.model = r;
+            console.log(this.model);
+          });
+        }
       }
-    }
     else {
-
     }
   }
 
@@ -49,7 +49,6 @@ export class AuthService {
 
   doLogout(): void{
     const removeToken = localStorage.removeItem('token');
-    console.log(removeToken);
     if (removeToken !== null) {
       this.router.navigate(['/login']);
     }

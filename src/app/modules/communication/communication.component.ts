@@ -9,7 +9,7 @@ import { AddCommunicationComponent } from './add-communication/add-communication
   styleUrls: ['./communication.component.scss']
 })
 export class CommunicationComponent implements OnInit {
-
+  public gridColumns = 4;
   constructor(public communicationService: CommunicationService,
               private dialog: MatDialog) { }
   ngOnInit(): void {

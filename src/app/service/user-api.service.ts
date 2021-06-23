@@ -27,8 +27,8 @@ export class UserApiService {
       });
   }
 
-  getUserDetailById(id: number): any {
-    return this.http.get(this.baseURL + '/' + id);
+  getUserDetailById(id: number): Observable<UserDetail> {
+    return this.http.get<UserDetail>(this.baseURL + '/' + id);
   }
 
   deleteUserDetail(id: number): any{

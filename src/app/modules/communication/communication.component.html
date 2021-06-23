@@ -1,11 +1,19 @@
-<div class="home__body">
-  <div class="center">
-    <button class="add__button" mat-mini-fab color="black" (click)="openAddDialog()" aria-label="Example icon button with a delete icon">
-      <mat-icon>add</mat-icon>
-    </button>
-    <div *ngFor="let item of communicationService.list">
-      <p>{{item.postId}}</p>
-      <p>{{item.value}}</p>
-    </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let item of communicationService.list">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>Das ist die Überschrift</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+      <mat-card-content>
+        <p>
+          {{item.value}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

@@ -17,7 +17,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class HomeComponent implements OnInit {
   @Input() filter!: string;
-  modalRel?: UserDetail;
+  modalRel!: UserDetail;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource!: MatTableDataSource<UserDetail>;
   constructor(public userService: UserApiService,
@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.refreshList();
-    console.log(this.authService.getUser());
   }
 
   openAddUserDetailDialog(): void {
@@ -39,7 +38,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onDelete(id: number): any{
+  onDelete(id: number): void{
     if (confirm('Are your sure to delete?')){
       this.userService.deleteUserDetail(id)
         .subscribe(res => {
