@@ -26,13 +26,27 @@ import { EditUserDialogComponent } from './shared/edit-user-dialog/edit-user-dia
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSortModule} from '@angular/material/sort';
 import { ChatbotComponent } from './modules/chatbot/chatbot.component';
-import { CommunicationComponent } from './modules/communication/communication.component';
 import { AddCommunicationComponent } from './modules/communication/add-communication/add-communication.component';
 import { LoginComponent } from './modules/login/login.component';
 import { RegisterComponent } from './modules/register/register.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSlider, MatSliderModule} from '@angular/material/slider';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { PostDetailComponent } from './modules/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +59,10 @@ import {MatSlider, MatSliderModule} from '@angular/material/slider';
     OpenUserDialogComponent,
     EditUserDialogComponent,
     ChatbotComponent,
-    CommunicationComponent,
     AddCommunicationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +85,21 @@ import {MatSlider, MatSliderModule} from '@angular/material/slider';
     MatSortModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatSliderModule
+    MatSliderModule,
+    MdbCarouselModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,10 +7,22 @@ import { RegisterComponent } from './modules/register/register.component';
 import { TableComponent } from './modules/table/table.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'news', component: CommunicationComponent},
+  {
+    path: '', component: HomeComponent
+  },
+
+  {
+    path: 'post', loadChildren: () => import('src/app/modules/communication/communication.module')
+    .then(x => x.CommunicationModule)
+  },
+
+  {
+    path: 'post/:id', loadChildren: () => import('src/app/modules/post-detail/post-detail.module')
+    .then(x => x.PostDetailModule)
+  },
+
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({

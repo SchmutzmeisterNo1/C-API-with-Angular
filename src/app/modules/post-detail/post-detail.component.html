@@ -1,0 +1,25 @@
+<div class="home__body" *ngIf="post != null">
+  <div class="top">
+  <h1 style="font-size: 50px; font-weight: 500;">{{post.headLine}}</h1>
+  <small>Created by Maximilian Pietsch</small>
+  <br>
+  <small>vom {{post.creationDate}}</small>
+  <span layout="row"><hr flex></span>
+</div >
+  <div style="width: 70%; justify-content: center; margin: 0 auto; margin-top: 30px; margin-bottom: 40px;">
+    <p style="font-size: x-large; font-weight: 400; font-size: medium; text-align: justify; letter-spacing: 1px;">{{post.value}}</p>
+  </div>
+  <div class="rating__section" style="justify-content: center; margin: 0 auto; display: flex;">
+    <button mat-button style="font-size: medium; color: green">LIKE</button>
+    <button mat-button style="font-size: medium; color: green">SHARE</button>
+  </div>
+  <div class="commenHeader__section" style="justify-content: center; display: flex; margin-top: 50px;">
+    <h3>Kommentare (zahl)</h3>
+  </div>
+    <div class="comment__section" style="margin-top: 10px; width: 50%">
+    <mdb-form-control>
+      <textarea style="text-align-last: center; -moz-text-align-last: center;" mdbInput class="form-control" id="textAreaExample" rows="4"></textarea>
+      <label mdbLabel class="form-label" for="textAreaExample">Schreiben Sie einen Kommentar...</label>
+    </mdb-form-control>
+  </div>
+</div>
